@@ -1,8 +1,11 @@
-module github.com/pmh-only/caddy/minify
+module github.com/pmh-only/caddy-minify
 
 go 1.21.4
 
-require github.com/caddyserver/caddy/v2 v2.7.5
+require (
+	github.com/caddyserver/caddy/v2 v2.7.5
+	github.com/tdewolff/minify/v2 v2.20.7
+)
 
 require (
 	filippo.io/edwards25519 v1.0.0 // indirect
@@ -80,7 +83,6 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/stoewer/go-strcase v1.2.0 // indirect
 	github.com/tailscale/tscert v0.0.0-20230806124524-28a91b69a046 // indirect
-	github.com/tdewolff/minify/v2 v2.20.7 // indirect
 	github.com/tdewolff/parse/v2 v2.7.5 // indirect
 	github.com/urfave/cli v1.22.14 // indirect
 	github.com/zeebo/blake3 v0.2.3 // indirect
