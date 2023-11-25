@@ -1,0 +1,9 @@
+{
+    order minify after encode
+}
+
+localhost {
+    root ./test
+    minify
+    file_server
+}
