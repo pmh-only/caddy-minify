@@ -66,6 +66,12 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request, next caddyht
 		return nil
 	}
 
+	if recorder.Header().Get("Content-Encoding") != "" {
+		w.WriteHeader(recorder.Status())
+		_, err = w.Write(resBuffer.Bytes())
+		return err
+	}
+
 	result := &bytes.Buffer{}
 	contentType := recorder.Header().Get("Content-Type")
 
