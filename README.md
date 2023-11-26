@@ -1,4 +1,4 @@
-# File (html/css/js/etc..) minification plugin for Caddy v2
+# File (html/css/js/etc..) minification module for Caddy v2
 ![](docs/draw.png)
 powered by [tdewolff/minify](https://github.com/tdewolff/minify) & inspired by [hacdias/caddy-v1-minify](https://github.com/hacdias/caddy-v1-minify)
 
