@@ -7,32 +7,27 @@ powered by [tdewolff/minify](https://github.com/tdewolff/minify) & inspired by [
 http.handlers.minify
 ```
 
-## Support `Content-Type`s
-* HTML: `text/html`
-* CSS: `text/css`
-* SVG: `image/svg+xml`
-* JavaScript: `^(application|text)/(x-)?(java|ecma)script$`
-* JSON: `[/+]json$`
-* XML: `[/+]xml$`
+## Support formats
+* html: `text/html`
+* css: `text/css`
+* svg: `image/svg+xml`
+* js: `^(application|text)/(x-)?(java|ecma)script$`
+* json: `[/+]json$`
+* xml: `[/+]xml$`
 
 ## Performance
 See https://github.com/tdewolff/minify#performance
 
 ## How to use
-JSON config:
-```json
-{
-  "handler": "minify"
-}
-```
-
-or Caddyfile (Make sure to order the handler in the correct place.):
+Make sure to order the handler in the correct place:
 
 ```Caddyfile
 {
     order minify after encode
 }
 ```
+
+With file_server:
 
 ```
 example.com {
@@ -42,9 +37,32 @@ example.com {
 }
 ```
 
+or reverse_proxy:
+
 ```
 example.com {
     minify
+    reverse_proxy localhost:8080
+}
+```
+
+limit formats (format all when not specified.):
+
+```
+example.com {
+    minify {
+        formats html css js
+    }
+    
+    reverse_proxy
+}
+```
+
+or simply:
+
+```
+example.com {
+    minify html css js
     reverse_proxy localhost:8080
 }
 ```

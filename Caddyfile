@@ -4,6 +4,10 @@
 
 localhost {
     root ./test
-    minify
+
+    minify {
+        formats json
+    }
+
     file_server
 }
